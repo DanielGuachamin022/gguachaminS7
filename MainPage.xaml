@@ -33,7 +33,8 @@
 
             <ListView x:Name="listaEstudiantes"
                           Grid.Row="0"
-                          Grid.Column="0">
+                          Grid.Column="0"
+                      ItemSelected="listaEstudiantes_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

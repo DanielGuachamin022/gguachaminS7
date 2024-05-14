@@ -27,6 +27,12 @@ namespace gguachaminS7
         {
             Navigation.PushAsync(new Vistas.AgregarEstudiante());
         }
+
+        private void listaEstudiantes_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var objestudiante = (Estudiante)e.SelectedItem;
+            Navigation.PushAsync(new Vistas.ActualizarEliminarEstudiante(objestudiante));
+        }
     }
 
 }
