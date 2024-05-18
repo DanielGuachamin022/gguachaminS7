@@ -19,7 +19,7 @@ public partial class AgregarEstudiante : ContentPage
 			parametros.Add("nombre", txtNombre.Text);
 			parametros.Add("apellido", txtApellido.Text);
 			parametros.Add("edad", txtEdad.Text);
-			cliente.UploadValues("http://localhost/appmovil/post.php", "POST", parametros);
+			cliente.UploadValues("http://localhost/appmovil/postestu.php", "POST", parametros);
 			Navigation.PushAsync(new MainPage());
 		}
 		catch (Exception ex)

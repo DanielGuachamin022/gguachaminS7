@@ -6,7 +6,7 @@ namespace gguachaminS7
 {
     public partial class MainPage : ContentPage
     {
-        private const string Url = "http://localhost/appmovil/post.php";
+        private const string Url = "http://localhost/appmovil/postestu.php";
         private readonly HttpClient cliente = new HttpClient();
         private ObservableCollection<Estudiante> estudiante;
         public MainPage()

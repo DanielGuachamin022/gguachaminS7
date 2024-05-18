@@ -24,7 +24,7 @@ public partial class ActualizarEliminarEstudiante : ContentPage
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
             int edad = Int32.Parse(txtEdad.Text);
-            cliente.UploadValues("http://localhost/appmovil/post.php?codigo="+codigo+"&nombre="+nombre+ "&apellido="+apellido
+            cliente.UploadValues("http://localhost/appmovil/postestu.php?codigo="+codigo+"&nombre="+nombre+ "&apellido="+apellido
                 + "&edad="+edad, "PUT", parametros);
             Navigation.PushAsync(new MainPage());
         }
@@ -36,6 +36,17 @@ public partial class ActualizarEliminarEstudiante : ContentPage
 
     private void btnEliminar_Clicked(object sender, EventArgs e)
     {
-
+        try
+        {
+            WebClient cliente = new WebClient();
+            var parametros = new System.Collections.Specialized.NameValueCollection();
+            int codigo = Int32.Parse(txtCodigo.Text);
+            cliente.UploadValues("http://localhost/appmovil/postestu.php?codigo=" + codigo, "DELETE", parametros);
+            Navigation.PushAsync(new MainPage());
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Alerta", ex.Message, "Cerrar");
+        }
     }
 }
